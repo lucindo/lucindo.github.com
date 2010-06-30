@@ -1,1 +1,1 @@
-http://lucindo.github.com
+<http://lucindo.github.com>
