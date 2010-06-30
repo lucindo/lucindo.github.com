@@ -1,0 +1,23 @@
+body { 
+    font: 0.8125em Verdana, sans-serif; line-height: 1; color: #333; background: #FFF;
+    margin-top: 35pt;
+    margin-left: 50pt;
+    margin-right: 45pt;
+    background : white;
+}
+h1 { 
+    font: bold 2.4em Georgia, "Times New Roman", serif; letter-spacing: 1px;
+}
+h3 { 
+    font: bold 1.4em Georgia, "Times New Roman", serif; letter-spacing: 1px;
+}
+a {
+    text-decoration: none;
+}
+a:hover {
+    color: #000; background-color: #F4F2E4;
+}
+ul {
+    list-style-type: square;
+    line-height: 1.6em;
+}
