@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Algoritmos e linguagens de programação</title>
+  <meta name="description" content="Tem gente que acredita que algoritmos e linguagens de programação são dois mundos distintos. Eu discordo. São raríssimas as pessoas que conseguem separar as ...">
+
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="canonical" href="http://lucindo.github.io/blog/2007/08/07/algoritmos-e-linguagens-de-programacao/">
+  <link rel="alternate" type="application/rss+xml" title="Renato Lucindo" href="http://lucindo.github.io/feed.xml" />
+</head>
+
+
+  <body>
+
+    <header class="site-header">
+
+  <div class="wrapper">
+
+    <a class="site-title" href="/">Renato Lucindo</a>
+
+    <nav class="site-nav">
+      <a href="#" class="menu-icon">
+        <svg viewBox="0 0 18 15">
+          <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
+          <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
+          <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
+        </svg>
+      </a>
+
+      <div class="trigger">
+        
+          
+          <a class="page-link" href="/about/">About</a>
+          
+        
+          
+        
+          
+        
+          
+        
+      </div>
+    </nav>
+
+  </div>
+
+</header>
+
+
+    <div class="page-content">
+      <div class="wrapper">
+        <div class="post">
+
+  <header class="post-header">
+    <h1 class="post-title">Algoritmos e linguagens de programação</h1>
+    <p class="post-meta">Aug 7, 2007</p>
+  </header>
+
+  <article class="post-content">
+    <p>Tem gente que acredita que algoritmos e linguagens de programação são dois mundos distintos. Eu discordo. São raríssimas as pessoas que conseguem separar as duas coisas, incluse eu e você que está lendo isso.</p>
+
+<p>Pegue qualquer livro de introdução a algoritmos e estrutura de dados, pode até mesmo ser um <a href="https://mitpress.mit.edu/books/introduction-algorithms">clássico</a>. Os algoritmos são dados em uma linguagem de programação. Pseudo-código é baseado numa linguagem de programação. Todo pseudo-código que eu conheço é pseudo-C ou pseudo-Pascal (um pseudo-Algol-like), inclusive a maioria dos que eu escrevo (pelo menos até agora).</p>
+
+<p>Quando pensamos num problema e estamos desenvolvendo um algoritmo para resolvê-lo estamos limitados às ferramentas de construção de algoritmos que conhecemos, que aprendemos. Mas mais do que isso, acabamos usando as que estamos mais acostumados. Um exemplo disso são algoritmos recursivos. Eu conheço um sem número de programadores com uma dificuldade tremenda de entender recursão. Eu sei que é um exemplo simples e que todo programador deveria saber recursão. Mas pegue uma linguagem mainstream, escolha um projeto qualquer open source e veja quantas definições recursivas você encontra.</p>
+
+<p>Digo isso por experiência própria. Eu aprendi e entendi recursão como todo mundo no curso de computação, mas eu quase nunca pensava recursivamente. Quando eu fui programar em <a href="http://www.erlang.org">Erlang</a> pela primeira vez, de cara o obstáculo foi <em><a href="http://en.wikipedia.org/wiki/Single_assignment">single assignment</a></em>. “Como assim eu não posso fazer i++?”. “Não dá pra fazer quase nada se não dá pra fazer i++!”. “Que linguagem tosca!!”. Acontece que dá para fazer de tudo sem i++ e coisas assim te forçam a exercitar outras formas de resolver problemas, como usar recursão e todo pensamento indutivo que você precisa para isso.</p>
+
+<p>Mas como eu disse, recursão é um exemplo tolo. O grande problema que eu vejo é que o <a href="http://c2.com/cgi/wiki?BlubParadox">Blub Paradox</a> está diretamente ligado não apenas à linguagem de programação mas também na forma como pensamos e resolvemos problemas, ou seja, como desenvolvemos algortimos.</p>
+
+<p>Agora um exercício de uma dessas coisas que a maioria das pessoas acha perda de tempo.</p>
+
+<p>Segundo a Wikipedia Memoização é: “<em>… memoization is an optimization technique used primarily to speed up computer programs by storing the results of function calls for later reuse, rather than recomputing them at each invocation of the function…</em>“.</p>
+
+<p>Memoização é uma técnica, assim como muitas outras coisas, como <em>backtracking</em>, como programação dinânima, como divisão e conquista. E porque não como <em>design patterns</em>? São técnicas.</p>
+
+<p>Fica difícil definir memoização como um algoritmo em pseudo-código, mas não porque não seja possível, mas porque falta alguma coisa no pseudo-código, no pseudo-C. Memoização poderia se resumir simplesmente ao algoritmo memoizar que recebe como entrada uma função e devolve a mesma função memoizada. Tendo esse algoritmo seria possível escrever algo assim em <a href="http://javascript.crockford.com/javascript.html">JavaScript</a>:</p>
+
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">function</span> <span class="nx">fib</span><span class="p">(</span><span class="nx">n</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">n</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nx">n</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="nx">fib</span><span class="p">(</span><span class="nx">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="nx">fib</span><span class="p">(</span><span class="nx">n</span> <span class="o">-</span> <span class="mi">2</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kd">function</span> <span class="nx">test</span><span class="p">(</span><span class="nx">n</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">t1</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">();</span>
+    <span class="kd">var</span> <span class="nx">v</span> <span class="o">=</span> <span class="nx">fib</span><span class="p">(</span><span class="nx">n</span><span class="p">);</span>
+    <span class="kd">var</span> <span class="nx">t2</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">();</span>
+    <span class="nx">print</span><span class="p">(</span><span class="err">“</span><span class="nx">fib</span><span class="p">(</span><span class="err">”</span><span class="o">+</span> <span class="nx">n</span> <span class="o">+</span> <span class="err">“</span><span class="p">)</span> <span class="o">=</span> <span class="err">“</span><span class="o">+</span> <span class="nx">v</span> <span class="o">+</span> <span class="err">”</span> <span class="nx">took</span><span class="o">:</span> <span class="err">“</span> <span class="o">+</span> <span class="p">(</span><span class="nx">t2</span> <span class="o">-</span> <span class="nx">t1</span><span class="p">)</span> <span class="o">+</span> <span class="err">”</span> <span class="nx">ms</span><span class="err">”</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kd">function</span> <span class="nx">runtest</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">test</span><span class="p">(</span><span class="mi">42</span><span class="p">);</span>
+    <span class="nx">fib</span> <span class="o">=</span> <span class="nx">memoize</span><span class="p">(</span><span class="nx">fib</span><span class="p">);</span>
+    <span class="nx">test</span><span class="p">(</span><span class="mi">42</span><span class="p">);</span>
+<span class="p">}</span></code></pre></div>
+
+<p>Dessa forma seria natural pensar que utilizando a função <code>memoize</code> a segunda chamada a <code>test(42)</code> fosse mais rápida que a primeira. De fato, é o que realmente acontece:</p>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">fib<span class="o">(</span>42<span class="o">)</span> <span class="o">=</span> <span class="m">267914296</span> took: <span class="m">279094</span> ms
+fib<span class="o">(</span>42<span class="o">)</span> <span class="o">=</span> <span class="m">267914296</span> took: <span class="m">20</span> ms</code></pre></div>
+
+<p>A implementação de <code>memoize</code> é simples numa linguagem de programação com suporte a <a href="http://en.wikipedia.org/wiki/Higher-order_function">higher-order functions</a>, mas eu não sei fazer algo parecido numa linguagem como Java/C# (por exemplo).</p>
+
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">function</span> <span class="nx">memoize</span><span class="p">(</span><span class="nx">fun</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">cache</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Array</span><span class="p">();</span>
+    <span class="k">return</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+        <span class="nx">arguments</span><span class="p">.</span><span class="nx">toString</span> <span class="o">=</span> <span class="nb">Array</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">toString</span><span class="p">;</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nx">cache</span><span class="p">[</span><span class="nx">arguments</span><span class="p">.</span><span class="nx">toString</span><span class="p">()]</span> <span class="o">==</span> <span class="kc">undefined</span><span class="p">)</span> <span class="p">{</span>
+            <span class="kd">var</span> <span class="nx">value</span> <span class="o">=</span> <span class="nx">fun</span><span class="p">(</span><span class="nx">arguments</span><span class="p">);</span>
+            <span class="nx">cache</span><span class="p">[</span><span class="nx">arguments</span><span class="p">.</span><span class="nx">toString</span><span class="p">()]</span> <span class="o">=</span> <span class="nx">value</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="k">return</span> <span class="nx">cache</span><span class="p">[</span><span class="nx">arguments</span><span class="p">.</span><span class="nx">toString</span><span class="p">()];</span>
+    <span class="p">}</span>
+<span class="p">}</span></code></pre></div>
+
+<p>Essa é uma idéia de memoização que o <a href="http://norvig.com/">Peter Norvig</a> apresenta no <a href="http://norvig.com/paip.html">PAIP</a>.</p>
+
+<p>De novo, isso não serve para nada, além claro de mudar um pouco a maneira como pensamos em resolver problemas. Alguns que concordam:</p>
+
+<blockquote>
+  <p>Lisp has jokingly been called “the most intelligent way to misuse a computer”. I think that description is a great compliment because it transmits the full flavor of liberation: it has assisted a number of our most gifted fellow humans in thinking previously impossible thoughts.</p>
+</blockquote>
+
+<p class="right">Edsger Dijkstra, CACM, 15:10</p>
+
+<blockquote>
+  <p>Lisp is worth learning for the profound enlightenment experience you will have when you finally get it; that experience will make you a better programmer for the rest of your days, even if you never actually use Lisp itself a lot.</p>
+</blockquote>
+
+<p class="right">Eric Raymond</p>
+
+<blockquote>
+  <p>Lisp … made me aware that software could be close to executable mathematics.</p>
+</blockquote>
+
+<p class="right">L. Peter Deutsch</p>
+
+<blockquote>
+  <p>Although my own previous enthusiasm has been for syntactically rich languages, like the Algol family, I now see clearly and concretely the force of Minsky’s 1970 Turing Lecture, in which he argued that Lisp’s uniformity of structure and power of self reference gave the programmer capabilities whose content was well worth the sacrifice of visual form.</p>
+</blockquote>
+
+<p class="right">Robert Floyd, Turing Award Lecture, 1979</p>
+
+
+  </article>
+
+  
+    <div id="disqus_thread"></div>
+<script type="text/javascript">
+    var disqus_shortname = 'renatolucindo';
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+
+  
+</div>
+
+      </div>
+    </div>
+
+    <footer class="site-footer">
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">Renato Lucindo</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col  footer-col-1">
+        <ul class="contact-list">
+          <li>Renato Lucindo</li>
+          <li><a href="mailto:lucindo@me.com">lucindo@me.com</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col  footer-col-2">
+        <ul class="social-media-list">
+          
+          <li>
+            <a href="https://github.com/lucindo">
+              <span class="icon  icon--github">
+                <svg viewBox="0 0 16 16">
+                  <path fill="#828282" d="M7.999,0.431c-4.285,0-7.76,3.474-7.76,7.761 c0,3.428,2.223,6.337,5.307,7.363c0.388,0.071,0.53-0.168,0.53-0.374c0-0.184-0.007-0.672-0.01-1.32 c-2.159,0.469-2.614-1.04-2.614-1.04c-0.353-0.896-0.862-1.135-0.862-1.135c-0.705-0.481,0.053-0.472,0.053-0.472 c0.779,0.055,1.189,0.8,1.189,0.8c0.692,1.186,1.816,0.843,2.258,0.645c0.071-0.502,0.271-0.843,0.493-1.037 C4.86,11.425,3.049,10.76,3.049,7.786c0-0.847,0.302-1.54,0.799-2.082C3.768,5.507,3.501,4.718,3.924,3.65 c0,0,0.652-0.209,2.134,0.796C6.677,4.273,7.34,4.187,8,4.184c0.659,0.003,1.323,0.089,1.943,0.261 c1.482-1.004,2.132-0.796,2.132-0.796c0.423,1.068,0.157,1.857,0.077,2.054c0.497,0.542,0.798,1.235,0.798,2.082 c0,2.981-1.814,3.637-3.543,3.829c0.279,0.24,0.527,0.713,0.527,1.437c0,1.037-0.01,1.874-0.01,2.129 c0,0.208,0.14,0.449,0.534,0.373c3.081-1.028,5.302-3.935,5.302-7.362C15.76,3.906,12.285,0.431,7.999,0.431z"/>
+                </svg>
+              </span>
+
+              <span class="username">lucindo</span>
+            </a>
+          </li>
+          
+
+          
+          <li>
+            <a href="https://twitter.com/rlucindo">
+              <span class="icon  icon--twitter">
+                <svg viewBox="0 0 16 16">
+                  <path fill="#828282" d="M15.969,3.058c-0.586,0.26-1.217,0.436-1.878,0.515c0.675-0.405,1.194-1.045,1.438-1.809
+                  c-0.632,0.375-1.332,0.647-2.076,0.793c-0.596-0.636-1.446-1.033-2.387-1.033c-1.806,0-3.27,1.464-3.27,3.27 c0,0.256,0.029,0.506,0.085,0.745C5.163,5.404,2.753,4.102,1.14,2.124C0.859,2.607,0.698,3.168,0.698,3.767 c0,1.134,0.577,2.135,1.455,2.722C1.616,6.472,1.112,6.325,0.671,6.08c0,0.014,0,0.027,0,0.041c0,1.584,1.127,2.906,2.623,3.206 C3.02,9.402,2.731,9.442,2.433,9.442c-0.211,0-0.416-0.021-0.615-0.059c0.416,1.299,1.624,2.245,3.055,2.271 c-1.119,0.877-2.529,1.4-4.061,1.4c-0.264,0-0.524-0.015-0.78-0.046c1.447,0.928,3.166,1.469,5.013,1.469 c6.015,0,9.304-4.983,9.304-9.304c0-0.142-0.003-0.283-0.009-0.423C14.976,4.29,15.531,3.714,15.969,3.058z"/>
+                </svg>
+              </span>
+
+              <span class="username">rlucindo</span>
+            </a>
+          </li>
+          
+        </ul>
+      </div>
+
+      <div class="footer-col  footer-col-3">
+        <p class="text">Renato Lucindo's blog
+</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+
+
+  </body>
+
+</html>

@@ -309,6 +309,9 @@ pre {
       .post-content h4 {
         font-size: 18px; } }
 
+.right {
+  text-align: right; }
+
 /**
  * Syntax highlighting styles
  */
