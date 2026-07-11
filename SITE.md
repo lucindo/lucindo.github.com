@@ -100,7 +100,7 @@ whatever order reads best — order is curation, not chronology):
 
 ## Footer
 
-Two lines: sans uppercase links (location · GitHub · X · Instagram · LinkedIn),
+Two lines: sans uppercase links (GitHub · X · Instagram · LinkedIn),
 then the italic serif colophon: "One HTML file, no frameworks, nothing tracked
 · source". If a rule above ever changes, update the colophon to stay honest.
 
